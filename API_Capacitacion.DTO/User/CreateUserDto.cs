@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace API_Capacitacion.DTO.User
 {
-    internal class CreateUserDto
+    public class CreateUserDto
     {
         public string Names { get; set; }
         public string UserName { get; set; }

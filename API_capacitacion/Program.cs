@@ -1,4 +1,7 @@
 using API_Capacitacion.Data;
+using API_Capacitacion.Data.Interfaces;
+using API_Capacitacion.Data.Servicios;
+using API_Capacitacion.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 PostgresqlConfiguration postgresqlConfiguration = new PostgresqlConfiguration(Environment.GetEnvironmentVariable("CONNECTION_STRING") ??"");
+
+builder.Services.AddSingleton(postgresqlConfiguration);
+
+builder.Services.AddScoped<ITareaService, TareaService>();
 
 var app = builder.Build();
 

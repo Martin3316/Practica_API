@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_Capacitacion.DTO.User
 {
-    internal class UpdateUserDto
+    public class UpdateUserDto
     {
       
         public string Names { get; set; }
